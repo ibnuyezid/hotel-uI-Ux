@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    "https://hotel-api-production-630c.up.railway.app/api/hotels/countByCity?cities=berlin,Addis Ababa,amster"
+    "https://hotel-api.onrender.com/api/hotels/countByCity?cities=berlin,Addis Ababa,amster"
   );
   console.log(data);
   return (
