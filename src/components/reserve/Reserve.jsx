@@ -13,7 +13,7 @@ import useFetch from "../../hooks/useFetch";
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { data, loading, error } = useFetch(
-    `https://hotel-api-production-630c.up.railway.app/api/hotels/room/${hotelId}`
+    `https://hotel-api.onrender.com/api/hotels/room/${hotelId}`
   );
   const { date } = useContext(SearchContext);
 
@@ -61,7 +61,7 @@ const Reserve = ({ setOpen, hotelId }) => {
       await Promise.all(
         selectedRooms.map((roomId) => {
           const res = axios.put(
-            `https://hotel-api-production-630c.up.railway.app/api/rooms/availability/${roomId}`,
+            `https://hotel-api.onrender.com/api/rooms/availability/${roomId}`,
             {
               dates: alldates,
             }
